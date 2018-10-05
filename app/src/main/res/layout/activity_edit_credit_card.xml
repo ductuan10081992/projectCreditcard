@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sqlLite.EditCreditCardActivity">
+
+    <FrameLayout
+        android:id="@+id/updateCardForm_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/cardForm_toolbar"
+            android:background="@drawable/plus_wallet_toolbar_background_color"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/imageButton_back"
+                android:src="@drawable/plus_wallet_icon_back_toolbar"
+                android:layout_gravity="start"
+                android:scaleType="fitXY"
+                android:background="@null"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/plus_black_color"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="Add Credit"
+                android:layout_gravity="center" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/cardForm_scrollView"
+        android:layout_below="@+id/updateCardForm_header"
+        android:layout_above="@+id/updateCardForm_button"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.braintreepayments.cardform.view.SupportedCardTypesView
+                android:id="@+id/supported_card_types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="20dp" />
+
+            <com.braintreepayments.cardform.view.CardForm
+                android:id="@+id/card_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/bt_margin"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/updateCardForm_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:text="Update Card"
+        android:textAllCaps="true" />
+
+</RelativeLayout>
